@@ -6,12 +6,13 @@ CBIR-NearDuplicateDetection: A project implementing ResNet-based Content-Based I
 1. [Introduction](#introduction)
 2. [Main Objectives](#main-objectives)
 3. [Methodology](#methodology)
-4. [Data Preparation](#data-preparation) 
+4. [Data Preparation](#data-preparation)
 5. [Model Training and Fine-Tuning](#model-training-and-fine-tuning)
 6. [Results](#results)
 7. [Technologies Used](#technologies-used)
 8. [Usage Instructions](#usage-instructions)
-9. [Detailed Training Plots](detailed-training-plots)
+9. [Detailed Training Plots](#detailed-training-plots)
+
 
 ## Introduction
 
