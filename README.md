@@ -1,6 +1,6 @@
 # CBIR-NearDuplicateDetection Using ResNet Model on a Historical dataset
-CBIR-NearDuplicateDetection: A project implementing ResNet-based Content-Based Image Retrieval for identifying near-duplicates in a historical dataset that contains images of war extracted from old newspapers.
 
+CBIR-NearDuplicateDetection: A project implementing ResNet-based Content-Based Image Retrieval for identifying near-duplicates in a historical dataset that contains images of war extracted from old newspapers.
 
 ## Table of Contents
 1. [Introduction](#introduction)
@@ -17,7 +17,7 @@ CBIR-NearDuplicateDetection: A project implementing ResNet-based Content-Based I
 ## Introduction
 
 This is a Research project in collaboration with historian researchers affiliated with Université Paris Cité.
-The aim of this project is to enable historical researchers to find all the images taken during a historical events and published in newspapers and magazines.
+The aim of this project is to enable historical researchers to find all the images taken during historical events and published in newspapers and magazines.
 Technically, this project aims to develop a content-based image retrieval system using a Convolutional Neural Network, specifically the ResNet-152 model.
 
 ## Main Objectives
@@ -34,11 +34,11 @@ The project requires specific data preparation, including splitting into trainin
 The dataset contains 71 different classes, each representing a "scene". In total, the dataset contains 268 images. 
 This is how we split them:
 - Training set: 160 images
-- Validation set around 50 images.
-- Validation set around 50 images.
+- Validation set: around 50 images.
+- Test set: around 50 images. (Note: There seems to be a typo in the original text, mentioning 'Validation set' twice.)
 
 This Graph showcases the class imbalance in the dataset:
-![Class imbalance in the dataset]((https://github.com/vivorima/CBIR-NearDuplicateDetection/blob/f6654bb32e89c951161acc13837ddea2ae179ec4/Pr%C3%A9sentation%20projet%20resent.png) "Class imbalance in the dataset")
+![Class imbalance in the dataset](https://github.com/vivorima/CBIR-NearDuplicateDetection/blob/f6654bb32e89c951161acc13837ddea2ae179ec4/Pr%C3%A9sentation%20projet%20resent.png "Class imbalance in the dataset")
 
 ## Model Training and Fine-Tuning
 Fine-tuning a pre-trained ResNet model. 
@@ -50,9 +50,9 @@ Fine-tuning a pre-trained ResNet model.
 - Number of epochs: 130, in 3 steps (30 then 50, then 50)
 - Batch Size: 32
 
-This is an overview of the plots of our training: 
+This is an overview of the plots of our training:
 
-![Loss and Accuracy Metrics]((https://github.com/vivorima/CBIR-NearDuplicateDetection/blob/f6654bb32e89c951161acc13837ddea2ae179ec4/overview.png) "Loss and Accuracy Metrics")
+![Loss and Accuracy Metrics](https://github.com/vivorima/CBIR-NearDuplicateDetection/blob/f6654bb32e89c951161acc13837ddea2ae179ec4/overview.png "Loss and Accuracy Metrics")
 
 ## Results of our evaluation
 The model achieved promising results with good precision and F1 scores, demonstrating the effectiveness of the chosen approach, even with challenges posed by class imbalance and the limited size of the dataset. NDCG measures the relevance with which the system ranks the most similar images at the top of the list.
@@ -63,7 +63,6 @@ The model achieved promising results with good precision and F1 scores, demonstr
 | Recall     | 85%   |
 | F1 score   | 85%   |
 | nDCG Score | 46%   |
-
 
 The nDCG score of 0.463 indicates room for improvement in image relevance ranking, while precision of 0.905 and recall of 0.852 show the model's strong discrimination capability and sensitivity. The F1 score of 0.854 reveals a good balance between precision and recall.
 
