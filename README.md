@@ -1,11 +1,10 @@
-# CBIR-NearDuplicateDetection
-CBIR-NearDuplicateDetection: A project implementing ResNet-based Content-Based Image Retrieval for identifying near-duplicates
+# CBIR-NearDuplicateDetection Using ResNet Model on a Historical dataset
+CBIR-NearDuplicateDetection: A project implementing ResNet-based Content-Based Image Retrieval for identifying near-duplicates in a historical dataset that contains images of war extracted from old newspapers.
 
-# Content-Based Image Search with ResNet
 
 ## Table of Contents
 1. [Introduction](#introduction)
-2. [Objectives](#objectives)
+2. [Main Objectives](#main-objectives)
 3. [Methodology](#methodology)
 4. [Results](#results)
 5. [Technologies Used](#technologies-used)
@@ -16,37 +15,58 @@ CBIR-NearDuplicateDetection: A project implementing ResNet-based Content-Based I
 10. [Installation and Usage Instructions](#installation-and-usage-instructions)
 
 ## Introduction
-This project aims to develop a content-based image retrieval system using Convolutional Neural Networks (CNNs), specifically the ResNet-152 model. In collaboration with historical researchers from Université Paris Cité, this project facilitates the retrieval of relevant historical images published in newspapers and journals.
 
-## Objectives
-- Develop a deep learning model to create effective visual representations.
+This is a Research project in collaboration with historian researchers affiliated with Université Paris Cité.
+The aim of this project is to enable historical researchers to find all the images taken during a historical events and published in newspapers and magazines.
+Technically, this project aims to develop a content-based image retrieval system using a Convolutional Neural Network, specifically the ResNet-152 model.
+
+## Main Objectives
+- Develop a deep learning model to extract effective visual features.
 - Identify images of the same scene using the CNN model.
 
-## Methodology
+## Methodology (Experiments)
 - Use of ResNet-152 pre-trained on ImageNet.
-- Fine-tuning the ResNet-152 model on a specific dataset for image classification.
+- Fine-tuning the ResNet-152 model on our dataset (the EYECON dataset) for an image classification task.
 - Feature extraction and use in a CBIR (Content-Based Image Retrieval) system.
 
-## Results
-The project achieved promising results with good precision and F1 scores, demonstrating the effectiveness of the chosen approach, even with challenges posed by class imbalance and the limited size of the dataset.
+## Data Preparation
+The project requires specific data preparation, including splitting into training, validation, and test sets. 
+The dataset contains 71 different classes, each representing a "scene". In total, the dataset contains 268 images. 
+This is how we split them:
+- Training set: 160 images
+- Validation set around 50 images.
+- Validation set around 50 images.
+
+This Graph showcases the class imbalance in the dataset:
+![Class imbalance in the dataset]((https://github.com/vivorima/CBIR-NearDuplicateDetection/blob/f6654bb32e89c951161acc13837ddea2ae179ec4/Pr%C3%A9sentation%20projet%20resent.png) "Class imbalance in the dataset")
+
+## Model Training and Fine-Tuning
+Fine-tuning a pre-trained ResNet model. 
+
+### Learning parameters
+- Learning rate: lr=0.001
+- Optimizer: Adam
+- Loss function: Cross-Entropy Loss
+- Number of epochs: 130, in 3 steps (30 then 50, then 50)
+- Batch Size: 32
+
+This is an overview of the plots of our training: 
+
+![Loss and Accuracy Metrics]((https://github.com/vivorima/CBIR-NearDuplicateDetection/blob/f6654bb32e89c951161acc13837ddea2ae179ec4/overview.png) "Loss and Accuracy Metrics")
+
+## Results of our evaluation
+The model achieved promising results with good precision and F1 scores, demonstrating the effectiveness of the chosen approach, even with challenges posed by class imbalance and the limited size of the dataset. NDCG measures the relevance with which the system ranks the most similar images at the top of the list.
+
+| Metric     | Value |
+|------------|-------|
+| Precision  | 90%   |
+| Recall     | 85%   |
+| F1 score   | 85%   |
+| nDCG Score | 46%   |
+
+
+The nDCG score of 0.463 indicates room for improvement in image relevance ranking, while precision of 0.905 and recall of 0.852 show the model's strong discrimination capability and sensitivity. The F1 score of 0.854 reveals a good balance between precision and recall.
 
 ## Technologies Used
 - Python
 - Libraries: PyTorch, Pandas, NumPy, PIL, sklearn, etc.
-
-## Data Preparation
-The project requires specific data preparation, including splitting into training, validation, and test sets. The data should be formatted as indicated in the notebook.
-
-## Model Training and Fine-Tuning
-This project involves fine-tuning a pre-trained ResNet model. Details on the parameters used and the fine-tuning method are explained in the notebook.
-
-## Dataset and Model Path Configuration
-The notebook uses specific paths for the dataset and the model. Clear instructions on how to configure these paths in your local environment are provided.
-
-## Custom Dataset Class
-A `SceneDataset` class is implemented to handle the image dataset. A description of its purpose and use is included in the notebook.
-
-## Installation and Usage Instructions
-
-## Images for Plots
-- Plot images demonstrating model performance, such as loss and accuracy graphs, confusion matrices, or example retrieval results. 
