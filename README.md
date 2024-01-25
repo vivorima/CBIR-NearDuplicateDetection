@@ -1,4 +1,4 @@
-# CBIR-NearDuplicateDetection Using ResNet Model on a Historical dataset
+# CBIR Using ResNet Model on a Historical dataset
 
 CBIR-NearDuplicateDetection: A project implementing ResNet-based Content-Based Image Retrieval for identifying near-duplicates in a historical dataset that contains images of war extracted from old newspapers.
 
