@@ -1,7 +1,7 @@
 # CBIR Using ResNet Model on a Historical dataset
 
 CBIR-NearDuplicateDetection: A project implementing ResNet-based Content-Based Image Retrieval for identifying near-duplicates in a historical dataset that contains images of war extracted from old newspapers.
-This is a part of the Main Project: https://eycon.sempiternelia.com/s/en/page/presentation
+
 
 ## Table of Contents
 1. [Introduction](#introduction)
@@ -17,9 +17,10 @@ This is a part of the Main Project: https://eycon.sempiternelia.com/s/en/page/pr
 
 ## Introduction
 
-This is a Research project in collaboration with historian researchers affiliated with Université Paris Cité.
-The aim of this project is to enable historical researchers to find all the images taken during historical events and published in newspapers and magazines.
-Technically, this project aims to develop a content-based image retrieval system using a Convolutional Neural Network, specifically the ResNet-152 model.
+This is a Research project in collaboration with historian researchers affiliated with Université Paris Cité. 
+The aim of this project is to enable historical researchers to find all the images taken during historical events and published in newspapers and magazines. This is a part of the main EYECON Project: *https://eycon.sempiternelia.com/s/en/page/presentation*
+
+**Technically, this project aims to develop a content-based image retrieval system using a Convolutional Neural Network, specifically the ResNet-152 model.**
 
 ## Main Objectives
 - Develop a deep learning model to extract effective visual features.
