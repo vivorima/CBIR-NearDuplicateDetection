@@ -75,26 +75,26 @@ The nDCG score of 0.463 indicates room for improvement in image relevance rankin
 There are 3 NoteBooks in this repository, each of them represnts a step of our methodology:
 
 - In `Near_Duplicates_Pre_trained_Resnet_Only.ipynb`: We use the pretrained ResNet-152 model on ImageNet to extract features from our images then with a cosine similarity we get the most similar images.
-- In 'Fine_tuning_Resnet_for_classification.ipynb' : Here we Fine-tune the ResNet-152 model on our dataset (the EYECON dataset) on an image classification task.
-- In 'Near_Duplicates_using_best_FineTuned_Model.ipynb': Finally, we use our finetuned ResNet-152 model to extract relevant features from our images then with a cosine similarity we get the most similar images. This is the CBIR (Content-Based Image Retrieval) system.
+- In `Fine_tuning_Resnet_for_classification.ipynb` : Here we Fine-tune the ResNet-152 model on our dataset (the EYECON dataset) on an image classification task.
+- In `Near_Duplicates_using_best_FineTuned_Model.ipynb`: Finally, we use our finetuned ResNet-152 model to extract relevant features from our images then with a cosine similarity we get the most similar images. This is the CBIR (Content-Based Image Retrieval) system.
 
 
 ## Detailed Training Plots
 
 In this section, we discuss the performance of our ResNet model during the training phase over the last 50 epochs as visualized in the following performance metrics plots:
-![All Metrics]((https://github.com/vivorima/CBIR-NearDuplicateDetection/blob/de86a930f49654bad6177f0b2121b65f0803e585/all%20plots.png) "All training Metrics")
+![All Metrics](https://github.com/vivorima/CBIR-NearDuplicateDetection/blob/de86a930f49654bad6177f0b2121b65f0803e585/all%20plots.png "All training Metrics")
 
 
-### Loss over Epochs: shows the model's training and validation loss.
+- ### Loss over Epochs: shows the model's training and validation loss.
 The training loss decreases over time, which indicates that the model is learning and improving its predictions on the training data. The validation loss, while generally following the training loss, shows some fluctuations (the peaks), suggesting moments of learning and overfitting, I believe this is due to the class imbalance and the limited batch size.
 
-### Precision over Epochs: tracks the precision metric for both training and validation sets.
+- ### Precision over Epochs: tracks the precision metric for both training and validation sets.
 Precision reflects the model's accuracy in classifying an image as belonging to a relevant class (scene). The plot exhibits a general upward suggesting that the model's ability to correctly identify relevant images but it fluctuates across epochs.
 
-### Recall over epochs : represents the recall metric for both training and validation sets.
+- ### Recall over epochs : represents the recall metric for both training and validation sets.
 This metric indicates the model's ability to find all relevant instances in the dataset. Both training and validation recall show a volatile pattern, indicating inconsistency in the model's sensitivity to detecting all relevant samples through the epochs.
 
-### F1 Score over Epochs : shows the F1 score for the training and validation sets.
+- ### F1 Score over Epochs : shows the F1 score for the training and validation sets.
 The F1 score is the mean of precision and recall, providing a single metric that balances both concerns. The plot indicates that model's balance between precision and recall is not yet stable, indicating the need for more training, more data and specially more balance.
 
 Overall, these plots suggest that while the model is learning and improving, there is room for improvement in terms of generalization and stability of the performance metrics across epochs. 
